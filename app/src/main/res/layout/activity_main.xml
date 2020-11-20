@@ -7,11 +7,17 @@
     tools:context=".MainActivity">
 
     <!--    @author 19b703 渋谷彩香-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffff8"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="しぶやさんぽ"
+        android:textSize="60dp"
+        android:textColor="#FF99ee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

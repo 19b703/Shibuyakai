@@ -7,6 +7,21 @@
     tools:context=".CountActivity">
 
     <!--    @author 19b703 渋谷彩香-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffbe5" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="75dp"
+        android:text="歩数計画面"
+        android:textSize="51dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="InvalidId,MissingConstraints" />
 
     <Button
         android:id="@+id/graphButton"
