@@ -31,7 +31,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void moveExpo() {
-        Button expo = findViewById(R.id.expoButton);
+        final Button expo = findViewById(R.id.expoButton);
+        final Button count = findViewById(R.id.countButton);
         expo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +45,9 @@ public class GameActivity extends AppCompatActivity {
                 // パラメータを設定
                 fragmentTransaction.replace(R.id.expo,ExpoFragment.newInstance());
                 fragmentTransaction.commit();
+
+                expo.setVisibility(View.INVISIBLE);
+                count.setVisibility(View.INVISIBLE);
             }
         });
     }

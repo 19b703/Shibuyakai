@@ -38,6 +38,10 @@ public class GraphFragment extends Fragment {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Button graph = (Button)getActivity().findViewById(R.id.graphButton);
+                Button game = (Button)getActivity().findViewById(R.id.gameButton);
+                graph.setVisibility(View.VISIBLE);
+                game.setVisibility(View.VISIBLE);
                 getFragmentManager().beginTransaction().remove(GraphFragment.this).commit();
             }
         });
