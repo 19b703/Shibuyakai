@@ -6,7 +6,7 @@
     <!--    @author 19b703 渋谷彩香-->
 
     <Button
-        android:id="@+id/closeExpoButton"
+        android:id="@+id/closeGraphButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
