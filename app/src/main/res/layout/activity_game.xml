@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    tools:context=".MainActivity">
 
     <!--    @author 19b703 渋谷彩香-->
 
     <Button
         android:id="@+id/expoButton"
-        android:layout_width="wrap_content"
+        android:layout_width="208dp"
         android:layout_height="wrap_content"
-        android:text="expoButton" />
+        android:text="expoButton"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/countButton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="countButton"
-        />
+        tools:ignore="MissingConstraints" />
 
     <Frame
         android:id="@+id/expo"
@@ -26,4 +29,4 @@
         android:layout_height="match_parent"
         />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
