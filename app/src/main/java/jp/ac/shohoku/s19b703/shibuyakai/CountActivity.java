@@ -2,6 +2,7 @@ package jp.ac.shohoku.s19b703.shibuyakai;
 
 //歩数計画面
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,17 @@ public class CountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_count);
         moveGraph();
+        moveGame();
+    }
+    private void moveGame() {
+        Button game = findViewById(R.id.gameButton);
+        game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CountActivity.this,GameActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void moveGraph() {
         Button graph = findViewById(R.id.graphButton);

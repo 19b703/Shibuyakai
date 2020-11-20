@@ -29,15 +29,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     /*
     //タップされたときに画面遷移
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //インテントの作成
-        Intent intent = new Intent(this,GameActivity.class);
+        Intent intent = new Intent(MainActivity.this,GameActivity.class);
         startActivity(intent);
-        return true;
+        return super.onTouchEvent(event);
     }
+    */
 
-     */
+
 }
