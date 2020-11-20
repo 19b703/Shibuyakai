@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--    @author 19b703 渋谷彩香-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/expoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="expoButton"
+        />
+
+    <Button
+        android:id="@+id/countButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="countButton"
+        />
+
+    <Frame
+        android:id="@+id/expo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
