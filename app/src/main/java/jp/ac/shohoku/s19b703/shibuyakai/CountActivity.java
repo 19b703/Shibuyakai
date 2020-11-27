@@ -23,36 +23,42 @@ public class CountActivity extends AppCompatActivity {
     private SensorManager sensorManager;
     private Sensor sensor;
 
-    private int stepCounter;
+    private int stepCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_count);
+
+        setStepCounter();
+        moveGraph();
+        moveGame();
+    }
+
+    private void setStepCounter(){
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         sensorManager.registerListener(new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
-                stepCounter = (int) sensorEvent.values[0];
+                stepCounter++;
                 TextView test = findViewById(R.id.TestText);
-                test.setText(stepCounter);
+                test.setText("event : "+stepCounter+" / count : "+test);
             }
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
             }
         },sensor, SensorManager.SENSOR_DELAY_FASTEST);
-
-        moveGraph();
-        moveGame();
     }
 
     @Override
     protected void onStop(){
         super.onStop();
         SharedPreferences stepData = CountActivity.this.getSharedPreferences("stepData",Context.MODE_PRIVATE);
+        int sharedCount = stepCounter + stepData.getInt("stepData",0);
         SharedPreferences.Editor editor = stepData.edit();
-        editor.putInt("step",stepCounter);
+        editor.putInt("step",sharedCount);
+        stepCounter = 0;
     }
     private void moveGame() {
         Button game = findViewById(R.id.gameButton);
