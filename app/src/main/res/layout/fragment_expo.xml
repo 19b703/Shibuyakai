@@ -12,8 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="closeExpoButton"
+        android:text="OK"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="歩いてキャラクターを育てよう！\ncountbutton→どれくらい歩いたか分かるよ\ngamebutton→ゲーム画面だよ\ngraphbutton→グラフが表示されるよ\nclosegraphbutton→画面を閉じるよ\nexpobutton→説明画面にいくよ "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

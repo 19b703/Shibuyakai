@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="closeGraphButton"
+        android:text="閉じる"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
