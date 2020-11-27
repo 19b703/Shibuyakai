@@ -35,6 +35,7 @@ public class CountActivity extends AppCompatActivity {
         moveGame();
     }
 
+    //歩数計センサー　歩数カウント部分
     private void setStepCounter(){
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
@@ -53,6 +54,7 @@ public class CountActivity extends AppCompatActivity {
 
     @Override
     protected void onStop(){
+        //歩数の類型をsharedPreferenceに保存
         super.onStop();
         SharedPreferences stepData = CountActivity.this.getSharedPreferences("stepData",Context.MODE_PRIVATE);
         int sharedCount = stepCounter + stepData.getInt("stepData",0);
