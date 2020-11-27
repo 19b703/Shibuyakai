@@ -16,30 +16,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        move();
     }
 
-    private void move(){
-        Button move = findViewById(R.id.test1);
-        move.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(),GameActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    /*
     //タップされたときに画面遷移
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean dispatchTouchEvent(MotionEvent event) {
         //インテントの作成
-        Intent intent = new Intent(MainActivity.this,GameActivity.class);
+        Intent intent = new Intent(MainActivity.this, GameActivity.class);
         startActivity(intent);
-        return super.onTouchEvent(event);
+        return super.dispatchTouchEvent(event);
     }
-    */
 
 
 }

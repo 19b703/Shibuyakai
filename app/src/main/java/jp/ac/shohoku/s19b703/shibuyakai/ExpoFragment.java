@@ -40,6 +40,10 @@ public class ExpoFragment extends Fragment {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Button expo = (Button)getActivity().findViewById(R.id.expoButton);
+                Button count = (Button)getActivity().findViewById(R.id.countButton);
+                expo.setVisibility(View.VISIBLE);
+                count.setVisibility(View.VISIBLE);
                 getFragmentManager().beginTransaction().remove(ExpoFragment.this).commit();
             }
         });

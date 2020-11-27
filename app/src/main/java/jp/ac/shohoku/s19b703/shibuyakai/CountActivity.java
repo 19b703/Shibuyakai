@@ -30,7 +30,8 @@ public class CountActivity extends AppCompatActivity {
         });
     }
     private void moveGraph() {
-        Button graph = findViewById(R.id.graphButton);
+        final Button graph = findViewById(R.id.graphButton);
+        final Button game = findViewById(R.id.gameButton);
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +44,9 @@ public class CountActivity extends AppCompatActivity {
                 // パラメータを設定
                 fragmentTransaction.replace(R.id.graph,GraphFragment.newInstance());
                 fragmentTransaction.commit();
+
+                graph.setVisibility(View.INVISIBLE);
+                game.setVisibility(View.INVISIBLE);
             }
         });
     }
