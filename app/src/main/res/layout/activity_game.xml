@@ -28,7 +28,7 @@ tools:context=".GameActivity">
         android:id="@+id/expoButton"
         android:layout_width="208dp"
         android:layout_height="wrap_content"
-        android:text="expoButton"
+        android:text="説明"
         tools:ignore="InvalidId,MissingConstraints"/>
 
     <Button

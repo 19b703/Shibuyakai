@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="graphButton"
+        android:text="グラフ"
         tools:ignore="InvalidId,MissingConstraints"
         />
 
@@ -37,9 +37,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="gameButton"
+        android:text="ゲーム画面"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:id="@+id/TestText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <FrameLayout
         android:id="@+id/graph"
@@ -47,6 +58,7 @@
         android:layout_height="match_parent"
         tools:ignore="InvalidId"
         />
+
 
 
 
