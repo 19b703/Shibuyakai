@@ -19,9 +19,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class CountActivity extends AppCompatActivity {
-    //センサーの取得
-    private SensorManager sensorManager;
-    private Sensor sensor;
 
     private int stepCounter = 0;
 
@@ -31,25 +28,26 @@ public class CountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_count);
 
         setStepCounter();
-        moveGraph();
+        //moveGraph();
         moveGame();
     }
 
     //歩数計センサー　歩数カウント部分
     private void setStepCounter(){
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+        //センサーの取得
+        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         sensorManager.registerListener(new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 stepCounter++;
                 TextView test = findViewById(R.id.TestText);
-                test.setText("event : "+stepCounter+" / count : "+test);
+                test.setText("event : "+stepCounter+" / count : "+sensorEvent);
             }
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
             }
-        },sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        }, sensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     @Override
@@ -72,6 +70,7 @@ public class CountActivity extends AppCompatActivity {
             }
         });
     }
+    /*
     private void moveGraph() {
         final Button graph = findViewById(R.id.graphButton);
         final Button game = findViewById(R.id.gameButton);
@@ -93,4 +92,5 @@ public class CountActivity extends AppCompatActivity {
             }
         });
     }
+     */
 }

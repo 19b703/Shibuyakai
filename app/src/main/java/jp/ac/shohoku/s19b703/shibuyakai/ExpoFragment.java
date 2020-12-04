@@ -33,6 +33,7 @@ public class ExpoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         closeExpo();
+        moveCresit();
     }
 
     public void closeExpo(){
@@ -45,6 +46,23 @@ public class ExpoFragment extends Fragment {
                 expo.setVisibility(View.VISIBLE);
                 count.setVisibility(View.VISIBLE);
                 getFragmentManager().beginTransaction().remove(ExpoFragment.this).commit();
+            }
+        });
+    }
+    private void moveCresit() {
+        Button credit = (Button)getActivity().findViewById(R.id.Credit);
+        credit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                // BackStackを設定
+                fragmentTransaction.addToBackStack(null);
+
+                // パラメータを設定
+                fragmentTransaction.replace(R.id.expo,CreditFragment.newInstance());
+                fragmentTransaction.commit();
             }
         });
     }
