@@ -35,12 +35,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="歩いてキャラクターを育てよう！\ncountbutton→どれくらい歩いたか分かるよ\ngamebutton→ゲーム画面だよ\ngraphbutton→グラフが表示されるよ\nclosegraphbutton→画面を閉じるよ\nexpobutton→説明画面にいくよ "
+        android:text="歩いてキャラクターを育てよう！\n育つと旅立っていくよ!しくしく(T_T)\nカウントボタンでどれくらい歩いたか分かるよ\nグラフボタンで歩数グラフが表示されるよ\n"
+        android:textColor=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
