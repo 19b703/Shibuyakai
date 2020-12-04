@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="0dp">
 
-        
+
     </FrameLayout>
 
     <TextView
@@ -42,6 +42,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/c"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="🄫渋谷会"
+        android:textColor="#FF99ee"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
