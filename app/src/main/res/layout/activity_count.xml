@@ -10,19 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fffbe5" >
-
-
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/TestText"
-        android:layout_width="match_parent"
-        android:layout_height="107dp"
-        android:text="count"
-        android:textSize="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:background="#fffbe5" />
 
     <TextView
         android:layout_width="260dp"
@@ -52,6 +40,16 @@
         android:text="ゲーム画面"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:id="@+id/TestText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <FrameLayout
