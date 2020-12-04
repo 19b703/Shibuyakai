@@ -50,7 +50,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="歩いてキャラクターを育てよう！\n育つと旅立っていくよ!しくしく(T_T)\nカウントボタンでどれくらい歩いたか分かるよ\nグラフボタンで歩数グラフが表示されるよ\n"
-        android:textColor=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
