@@ -47,13 +47,13 @@
         android:id="@+id/c"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
         android:text="🄫渋谷会"
         android:textColor="#FF99ee"
         android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="InvalidId,MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
