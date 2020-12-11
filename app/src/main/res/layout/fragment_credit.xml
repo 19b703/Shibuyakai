@@ -6,7 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".CountActivity">
 
-    <!--    @author 19b703 渋谷彩香-->
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F3F1" >
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SpecialThanks : ITPG"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="InvalidId,MissingConstraints" />
 
     <Button
         android:id="@+id/closeCredit"
@@ -25,18 +39,12 @@
         app:layout_constraintVertical_bias="0.008"
         tools:ignore="InvalidId,MissingConstraints" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="268dp"
-        android:text="SpecialThanks : ITPG"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.992"
-        tools:ignore="InvalidId,MissingConstraints" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id = "@+id/creditView"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/credit"></ImageView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
