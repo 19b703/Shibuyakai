@@ -49,7 +49,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="歩いてキャラクターを育てよう！\n育つと旅立っていくよ!しくしく(T_T)\nカウントボタンでどれくらい歩いたか分かるよ\nグラフボタンで歩数グラフが表示されるよ\n"
+        android:text="三体のモンスターの幼体を収容したぞ！\nモンスターは歩いたエネルギーで育つ！\n君はすべてのモンスターを育てられるかな！？"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
