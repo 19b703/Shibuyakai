@@ -14,8 +14,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class ExpoFragment extends Fragment {
-    public static ExpoFragment newInstance(){
-        ExpoFragment fragment = new ExpoFragment ();
+    public static ExpoFragment newInstance() {
+        ExpoFragment fragment = new ExpoFragment();
         // Bundle にパラメータを設定
         Bundle barg = new Bundle();
         fragment.setArguments(barg);
@@ -26,9 +26,10 @@ public class ExpoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
-                             Bundle savedInstanceState){
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_expo, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -36,21 +37,22 @@ public class ExpoFragment extends Fragment {
         moveCresit();
     }
 
-    public void closeExpo(){
-        Button close = (Button)getActivity().findViewById(R.id.closeExpoButton);
+    public void closeExpo() {
+        Button close = (Button) getActivity().findViewById(R.id.closeExpoButton);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Button expo = (Button)getActivity().findViewById(R.id.expoButton);
-                Button count = (Button)getActivity().findViewById(R.id.countButton);
+                Button expo = (Button) getActivity().findViewById(R.id.expoButton);
+                Button count = (Button) getActivity().findViewById(R.id.countButton);
                 expo.setVisibility(View.VISIBLE);
                 count.setVisibility(View.VISIBLE);
                 getFragmentManager().beginTransaction().remove(ExpoFragment.this).commit();
             }
         });
     }
+
     private void moveCresit() {
-        Button credit = (Button)getActivity().findViewById(R.id.Credit);
+        Button credit = (Button) getActivity().findViewById(R.id.Credit);
         credit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +63,7 @@ public class ExpoFragment extends Fragment {
                 fragmentTransaction.addToBackStack(null);
 
                 // パラメータを設定
-                fragmentTransaction.replace(R.id.expo,CreditFragment.newInstance());
+                fragmentTransaction.replace(R.id.expo, CreditFragment.newInstance());
                 fragmentTransaction.commit();
             }
         });

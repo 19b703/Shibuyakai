@@ -10,8 +10,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F6F3F1" >
-    </FrameLayout>
+        android:background="#F6F3F1"></FrameLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,11 +39,11 @@
         tools:ignore="InvalidId,MissingConstraints" />
 
     <ImageView
+        android:id="@+id/creditView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id = "@+id/creditView"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/credit"></ImageView>
+        android:contentDescription="@string/credit"
+        android:scaleType="centerCrop"></ImageView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
