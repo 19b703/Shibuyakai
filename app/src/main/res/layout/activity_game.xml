@@ -36,6 +36,7 @@ tools:context=".GameActivity"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="カウント"
+        android:background="@drawable/layout"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
