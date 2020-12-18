@@ -14,6 +14,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class ExpoFragment extends Fragment {
+    String expo = "モンスターの幼体を発見したよ！\n" +
+                  "歩いたエネルギーでモンスターは育つよ！\n" +
+                  "育ち切ったモンスターは旅立っていくよ！\n" +
+                  "モンスターは全部で3種類!\n"+
+                  "君はすべてのモンスターをそだてられるかな？";
+
+
     public static ExpoFragment newInstance() {
         ExpoFragment fragment = new ExpoFragment();
         // Bundle にパラメータを設定
