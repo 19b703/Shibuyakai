@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="閉じる"
+        android:background="@drawable/layout"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
