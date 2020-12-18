@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#e5fffd"
-    tools:context=".GameActivity"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#e5fffd"
+tools:context=".GameActivity"
     tools:ignore="MissingConstraints">
 
     <!--    @author 19b703 渋谷彩香-->
@@ -27,7 +27,7 @@
         android:layout_width="208dp"
         android:layout_height="wrap_content"
         android:text="説明"
-        tools:ignore="InvalidId,MissingConstraints" />
+        tools:ignore="InvalidId,MissingConstraints"/>
 
     <Button
         android:id="@+id/countButton"
@@ -48,21 +48,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.735">
-
         <ImageView
-            android:id="@+id/characterView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/credit"
-            android:scaleType="centerCrop"></ImageView>
+            android:id = "@+id/characterView"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/credit"></ImageView>
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="100dp"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <FrameLayout
         android:id="@+id/expo"
