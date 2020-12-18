@@ -43,8 +43,6 @@ public class GameActivity extends AppCompatActivity {
         Random rnd = new Random();
         if (total > 600) {
             flg = rnd.nextInt(3);
-            TextView test2 = findViewById(R.id.test);
-            test2.setText("flg:" + flg);
             SharedPreferences.Editor editor = gameData.edit();
             editor.putInt("flg", flg);
             editor.remove("step");
