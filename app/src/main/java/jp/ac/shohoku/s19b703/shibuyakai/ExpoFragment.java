@@ -53,6 +53,7 @@ public class ExpoFragment extends Fragment {
                 Button count = (Button) getActivity().findViewById(R.id.countButton);
                 expo.setVisibility(View.VISIBLE);
                 count.setVisibility(View.VISIBLE);
+                assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().remove(ExpoFragment.this).commit();
             }
         });
@@ -64,6 +65,7 @@ public class ExpoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
+                assert fragmentManager != null;
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // BackStackを設定

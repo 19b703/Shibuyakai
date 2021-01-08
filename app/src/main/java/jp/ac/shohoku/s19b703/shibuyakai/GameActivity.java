@@ -26,6 +26,11 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        //歩数
+        SharedPreferences gameData = GameActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
+        int step = gameData.getInt("step", 0);
+
         moveExpo();
         moveCount();
         displayCharacter();
@@ -38,15 +43,13 @@ public class GameActivity extends AppCompatActivity {
         ImageView character = findViewById(R.id.characterView);
         int flg = gameData.getInt("flg", 0); //0:しぶや 1:ただ 2:かとう
 
-        total = 700;
-
         Random rnd = new Random();
         if (total > 600) {
             flg = rnd.nextInt(3);
             SharedPreferences.Editor editor = gameData.edit();
             editor.putInt("flg", flg);
             editor.remove("step");
-            editor.commit();
+            editor.apply();
             createDialog();
             total = 200;
         }
