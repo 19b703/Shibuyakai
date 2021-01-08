@@ -11,6 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f0e5ff" >
+
+        <Button
+            android:id="@+id/closeExpoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout"
+            android:text="✖"
+            tools:ignore="InvalidId,MissingConstraints" />
     </FrameLayout>
 
     <Button
@@ -23,33 +31,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
-    <Button
-        android:id="@+id/closeExpoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="OK"
-        android:background="@drawable/layout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="InvalidId,MissingConstraints" />
-
     <RelativeLayout
         android:id="@+id/game"
-        android:layout_width="375dp"
-        android:layout_height="310dp"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044">
+        app:layout_constraintTop_toTopOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.080">
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="歩いてキャラクターを育てよう！\n育つと旅立っていくよ!しくしく(T_T)\nカウントボタンでどれくらい歩いたか分かるよ\nグラフボタンで歩数グラフが表示されるよ\n"
-            android:textSize="22dp"
+            android:text="三体のモンスターの幼体を収容したぞ！\nモンスターは歩いたエネルギーで育つ！\n君はすべてのモンスターを育てられるかな！？"
+            android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

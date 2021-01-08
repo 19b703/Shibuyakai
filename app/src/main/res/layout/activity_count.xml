@@ -79,7 +79,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/layout"
-        android:text="戻る"
+        android:text="✖"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
