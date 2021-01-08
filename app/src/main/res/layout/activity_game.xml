@@ -28,7 +28,8 @@ tools:context=".GameActivity"
         android:layout_height="wrap_content"
         android:background="@drawable/layout"
         android:text="説明"
-        tools:ignore="InvalidId,MissingConstraints"/>
+        android:textColor="#ffffff"
+        tools:ignore="InvalidId,MissingConstraints" />
 
     <Button
         android:id="@+id/countButton"
@@ -37,6 +38,7 @@ tools:context=".GameActivity"
         android:layout_gravity="center_horizontal"
         android:text="カウント"
         android:background="@drawable/layout"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
@@ -50,6 +52,7 @@ tools:context=".GameActivity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.735">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
