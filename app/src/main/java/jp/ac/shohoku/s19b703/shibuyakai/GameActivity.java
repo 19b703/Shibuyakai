@@ -27,6 +27,11 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        //CountActivity開始
+        //stepcountがどうなるかわからん
+        Intent intent = new Intent(this,CountActivity.class);
+        startActivity(intent);
+
         //歩数
         SharedPreferences gameData = GameActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
         int step = gameData.getInt("step", 0);

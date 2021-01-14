@@ -1,6 +1,7 @@
 package jp.ac.shohoku.s19b703.shibuyakai;
 
 //歩数計画面
+//MyuKato
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,7 +12,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,9 +19,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
-//import androidx.fragment.app.FragmentManager;
-//import androidx.fragment.app.FragmentTransaction;
-
 
 public class CountActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -31,19 +28,15 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
     int stepcount = 0;
     float a = 0.6f;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_count);
 
-
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
 
-        //setStepCounter();
-        //moveGraph();
         moveGame();
     }
 
@@ -71,7 +64,7 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
             }
             SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
             int AllStep = gameData.getInt("AllStep", 0);
-            int DayStep = gameData.getInt("DayStep",0);
+            int DayStep = gameData.getInt("DayStep", 0);
             int AllSteps = stepcount + AllStep;
             int DaySteps = stepcount + DayStep;
             CountAll.setText(AllSteps + "歩");
@@ -85,7 +78,7 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         Calendar toDay = Calendar.getInstance();
         int year = toDay.get(Calendar.YEAR);
@@ -94,18 +87,18 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
 
         SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = gameData.edit();
-        int oldY = gameData.getInt("YEAR",0);
-        int oldM = gameData.getInt("MONTH",0);
-        int oldD = gameData.getInt("DAY",0);
+        int oldY = gameData.getInt("YEAR", 0);
+        int oldM = gameData.getInt("MONTH", 0);
+        int oldD = gameData.getInt("DAY", 0);
 
         TextView test = findViewById(R.id.test);
-        test.setText(oldY+"/"+oldM+"/"+oldD);
+        test.setText(oldY + "/" + oldM + "/" + oldD);
 
-        if(!(year == oldY && month == oldM && day == oldD)){
-            editor.putInt("DayStep",0);
-            editor.putInt("YEAR",year);
-            editor.putInt("MONTH",month);
-            editor.putInt("DAY",day);
+        if (!(year == oldY && month == oldM && day == oldD)) {
+            editor.putInt("DayStep", 0);
+            editor.putInt("YEAR", year);
+            editor.putInt("MONTH", month);
+            editor.putInt("DAY", day);
             editor.apply();
         }
     }
@@ -116,14 +109,13 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         super.onStop();
         SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
         int sharedCount = stepcount + gameData.getInt("AllStep", 0);
-        int toDayCount = stepcount + gameData.getInt("DayStep",0);
+        int toDayCount = stepcount + gameData.getInt("DayStep", 0);
         @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
         editor.putInt("AllStep", sharedCount);
         editor.putInt("DayStep", toDayCount);
         editor.apply();
         stepcount = 0;
     }
-
 
     private void moveGame() {
         Button game = findViewById(R.id.gameButton);
@@ -136,27 +128,4 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         });
 
     }
-    /*
-    private void moveGraph() {
-        final Button graph = findViewById(R.id.graphButton);
-        final Button game = findViewById(R.id.gameButton);
-        graph.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                // BackStackを設定
-                fragmentTransaction.addToBackStack(null);
-
-                // パラメータを設定
-                fragmentTransaction.replace(R.id.graph,GraphFragment.newInstance());
-                fragmentTransaction.commit();
-
-                graph.setVisibility(View.INVISIBLE);
-                game.setVisibility(View.INVISIBLE);
-            }
-        });
-    }
-     */
 }
