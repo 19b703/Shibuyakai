@@ -17,17 +17,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Calendar;
 //import androidx.fragment.app.FragmentManager;
 //import androidx.fragment.app.FragmentTransaction;
 
 
-public class CountActivity extends AppCompatActivity implements SensorEventListener  {
+public class CountActivity extends AppCompatActivity implements SensorEventListener {
 
-    boolean first =true;
+    boolean first = true;
     boolean up = false;
-    float d0,d=0f;
-    int stepcount=0;
-    float a=0.6f;
+    float d0, d = 0f;
+    int stepcount = 0;
+    float a = 0.6f;
 
 
     @Override
@@ -36,10 +38,9 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         setContentView(R.layout.activity_count);
 
 
-
-        SensorManager sensorManager=(SensorManager) getSystemService(SENSOR_SERVICE);
-        Sensor sensor=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_GAME);
+        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
 
         //setStepCounter();
         //moveGraph();
@@ -49,27 +50,32 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         float value[] = sensorEvent.values;
-        TextView test = findViewById(R.id.TestText);
-        float sum=(float)Math.sqrt(Math.pow(value[0],2)+Math.pow(value[1],2)+Math.pow(value[2],2));
+        TextView CountAll = findViewById(R.id.AllStep);
+        TextView CountDay = findViewById(R.id.DayStep);
 
-        if(first){
-            first=false;
-            up=true;
-            d0=a*sum;
-        }else{
+        float sum = (float) Math.sqrt(Math.pow(value[0], 2) + Math.pow(value[1], 2) + Math.pow(value[2], 2));
+
+        if (first) {
+            first = false;
+            up = true;
+            d0 = a * sum;
+        } else {
             //ローパスフィルタリング 時系列の細かいデータを平滑化
-            d=a*sum+(1-a)*d0;
-            if(up&&d<d0){
-                up=false;
+            d = a * sum + (1 - a) * d0;
+            if (up && d < d0) {
+                up = false;
                 stepcount++;
-            }else if(!up&& d>d0){
-                up=true;
-                d0=d;
+            } else if (!up && d > d0) {
+                up = true;
+                d0 = d;
             }
             SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-            int step = gameData.getInt("step", 0);
-            int STEP = stepcount;
-            test.setText(STEP+"歩");
+            int AllStep = gameData.getInt("AllStep", 0);
+            int DayStep = gameData.getInt("DayStep",0);
+            int AllSteps = stepcount + AllStep;
+            int DaySteps = stepcount + DayStep;
+            CountAll.setText(AllSteps + "歩");
+            CountDay.setText(DaySteps + "歩");
         }
     }
 
@@ -78,45 +84,45 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         //精度が変更されたとき
     }
 
-    /*
-    //歩数計センサー　歩数カウント部分
-    private void setStepCounter() {
-        //センサーの取得
-        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        Sensor sensor = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Calendar toDay = Calendar.getInstance();
+        int year = toDay.get(Calendar.YEAR);
+        int month = toDay.get(Calendar.MONTH) + 1;
+        int day = toDay.get(Calendar.DATE);
+
+        SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = gameData.edit();
+        int oldY = gameData.getInt("YEAR",0);
+        int oldM = gameData.getInt("MONTH",0);
+        int oldD = gameData.getInt("DAY",0);
+
+        TextView test = findViewById(R.id.test);
+        test.setText(oldY+"/"+oldM+"/"+oldD);
+
+        if(!(year == oldY && month == oldM && day == oldD)){
+            editor.putInt("DayStep",0);
+            editor.putInt("YEAR",year);
+            editor.putInt("MONTH",month);
+            editor.putInt("DAY",day);
+            editor.apply();
         }
-        sensorManager.registerListener(new SensorEventListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onSensorChanged(SensorEvent sensorEvent) {
-                stepCounter++;
-                toDaystep++;
-                TextView test = findViewById(R.id.TestText);
-                test.setText("event : " + stepCounter + " / count : " + sensorEvent);
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int i) {
-            }
-        }, sensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
-
-     */
 
     @Override
     protected void onStop() {
         //歩数の類型をsharedPreferenceに保存
         super.onStop();
         SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-        int sharedCount = stepcount + gameData.getInt("step", 0);
+        int sharedCount = stepcount + gameData.getInt("AllStep", 0);
+        int toDayCount = stepcount + gameData.getInt("DayStep",0);
         @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
-        editor.putInt("step", sharedCount);
+        editor.putInt("AllStep", sharedCount);
+        editor.putInt("DayStep", toDayCount);
         editor.apply();
         stepcount = 0;
     }
-
 
 
     private void moveGame() {

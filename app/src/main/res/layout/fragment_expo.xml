@@ -6,19 +6,22 @@
     tools:context=".GameActivity">
 
     <!--    @author 19b703 渋谷彩香-->
+
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f0e5ff" >
+        android:background="#f0e5ff"
+        tools:layout_editor_absoluteX="-33dp"
+        tools:layout_editor_absoluteY="-345dp">
 
         <Button
             android:id="@+id/closeExpoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/layout"
-            android:textColor="#ffffff"
             android:text="✖"
+            android:textColor="#ffffff"
             tools:ignore="InvalidId,MissingConstraints" />
     </FrameLayout>
 
@@ -32,28 +35,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
-    <RelativeLayout
-        android:id="@+id/game"
-        android:layout_width="600dp"
-        android:layout_height="300dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <TextView
+        android:id="@+id/ExpoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F5F0FD"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:text="aaa"
+        android:textSize="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.080">
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="三体のモンスターの幼体を収容したぞ！\nモンスターは歩いたエネルギーで育つ！\n君はすべてのモンスターを育てられるかな！？"
-            android:textSize="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </RelativeLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

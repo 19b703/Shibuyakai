@@ -28,7 +28,7 @@
         tools:ignore="InvalidId,MissingConstraints" />
 
     <TextView
-        android:id="@+id/TestText"
+        android:id="@+id/AllStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
@@ -53,7 +53,7 @@
         tools:ignore="InvalidId,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/DayStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="700dp"
@@ -61,17 +61,6 @@
         android:textSize="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="InvalidId,MissingConstraints" />
-
-    <TextView
-        android:layout_width="260dp"
-        android:layout_height="75dp"
-        android:text="歩数計画面"
-        android:textSize="51dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout2"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
@@ -123,7 +112,16 @@
         tools:ignore="InvalidId"
         />
 
-
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="datetest"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="InvalidId,MissingConstraints" />
 
 
 

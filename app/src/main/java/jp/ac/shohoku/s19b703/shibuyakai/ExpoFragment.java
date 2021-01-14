@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,11 +15,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class ExpoFragment extends Fragment {
-    String expo = "モンスターの幼体を発見したよ！\n" +
-                  "歩いたエネルギーでモンスターは育つよ！\n" +
-                  "育ち切ったモンスターは旅立っていくよ！\n" +
+    String expo = "モンスターの幼体を発見したよ!\n" +
+                  "歩いたエネルギーでモンスターは育つよ!\n" +
+                  "育ち切ったモンスターは旅立っていくよ!\n" +
                   "モンスターは全部で3種類!\n"+
-                  "君はすべてのモンスターをそだてられるかな？";
+                  "君はすべてのモンスターをそだてられるかな?!";
 
 
     public static ExpoFragment newInstance() {
@@ -40,6 +41,8 @@ public class ExpoFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView text = (TextView) getActivity().findViewById(R.id.ExpoText);
+        text.setText(expo);
         closeExpo();
         moveCresit();
     }
