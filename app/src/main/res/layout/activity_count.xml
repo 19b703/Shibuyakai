@@ -71,7 +71,7 @@
         android:text="🏃"
         android:textSize="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/graphButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
@@ -81,15 +81,6 @@
         android:text="👣"
         android:textSize="100dp"
         tools:ignore="InvalidId,MissingConstraints" />
-
-    <Button
-        android:id="@+id/graphButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="グラフ"
-        tools:ignore="InvalidId,MissingConstraints"
-        />
 
     <Button
         android:id="@+id/gameButton"
@@ -103,15 +94,6 @@
         tools:ignore="InvalidId,MissingConstraints" />
 
 
-
-
-    <FrameLayout
-        android:id="@+id/graph"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="InvalidId"
-        />
-
     <TextView
         android:id="@+id/test"
         android:layout_width="wrap_content"
@@ -122,9 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
