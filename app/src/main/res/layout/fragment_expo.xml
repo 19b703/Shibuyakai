@@ -24,12 +24,12 @@
             android:textColor="#ffffff"
             tools:ignore="InvalidId,MissingConstraints" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="👾👾👾👾👾"
-            android:textSize="99dp"
-            tools:ignore="InvalidId,MissingConstraints" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="👾👾👾👾👾"-->
+<!--            android:textSize="99dp"-->
+<!--            tools:ignore="InvalidId,MissingConstraints" />-->
 
 
         <TextView
