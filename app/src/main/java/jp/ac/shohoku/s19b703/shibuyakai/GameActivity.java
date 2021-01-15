@@ -28,7 +28,12 @@ public class GameActivity extends AppCompatActivity {
         moveExpo();
         moveCount();
         displayCharacter();
-
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Intent intent = new Intent(getApplication(), MonsterLabo.class);
+        startService(intent);
     }
 
     private void displayCharacter() {
@@ -114,6 +119,13 @@ public class GameActivity extends AppCompatActivity {
         dialog.setMessage("成長したモンスターは旅立っていったよ\n新しいモンスターを育てよう!");
         dialog.setPositiveButton("そだてる", null);
         dialog.create().show();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Intent intent = new Intent(getApplication(), MonsterLabo.class);
+        stopService(intent);
     }
 
 }

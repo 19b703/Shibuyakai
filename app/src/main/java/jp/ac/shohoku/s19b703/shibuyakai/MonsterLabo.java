@@ -1,5 +1,6 @@
 package jp.ac.shohoku.s19b703.shibuyakai;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +17,6 @@ public class MonsterLabo extends Service implements SensorEventListener {
     boolean first = true;
     boolean up = false;
     float d0, d = 0f;
-    int stepcount = 0;
     float a = 0.6f;
 
     public MonsterLabo() {
@@ -58,6 +58,10 @@ public class MonsterLabo extends Service implements SensorEventListener {
                 up = true;
                 d0 = d;
             }
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
+            editor.putInt("AllStep", AllStep);
+            editor.putInt("DayStep", DayStep);
+            editor.apply();
         }
     }
 

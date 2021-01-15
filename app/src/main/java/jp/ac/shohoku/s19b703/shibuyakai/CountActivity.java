@@ -22,11 +22,6 @@ import java.util.Calendar;
 
 public class CountActivity extends AppCompatActivity implements SensorEventListener {
 
-    boolean first = true;
-    boolean up = false;
-    float d0, d = 0f;
-    int stepcount;
-    float a = 0.6f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,34 +37,14 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        float value[] = sensorEvent.values;
         TextView CountAll = findViewById(R.id.AllStep);
         TextView CountDay = findViewById(R.id.DayStep);
+        SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
+        int AllStep = gameData.getInt("AllStep", 0);
+        int DayStep = gameData.getInt("DayStep", 0);
+        CountAll.setText(AllStep + "歩");
+        CountDay.setText(DayStep + "歩");
 
-        float sum = (float) Math.sqrt(Math.pow(value[0], 2) + Math.pow(value[1], 2) + Math.pow(value[2], 2));
-
-        if (first) {
-            first = false;
-            up = true;
-            d0 = a * sum;
-        } else {
-            //ローパスフィルタリング 時系列の細かいデータを平滑化
-            d = a * sum + (1 - a) * d0;
-            if (up && d < d0) {
-                up = false;
-                stepcount++;
-            } else if (!up && d > d0) {
-                up = true;
-                d0 = d;
-            }
-            SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-            int AllStep = gameData.getInt("AllStep", 0);
-            int DayStep = gameData.getInt("DayStep", 0);
-            int AllSteps = stepcount + AllStep;
-            int DaySteps = stepcount + DayStep;
-            CountAll.setText(AllSteps + "歩");
-            CountDay.setText(DaySteps + "歩");
-        }
     }
 
     @Override
@@ -80,6 +55,9 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
     @Override
     protected void onStart() {
         super.onStart();
+        Intent intent = new Intent(getApplication(), MonsterLabo.class);
+        startService(intent);
+
         Calendar toDay = Calendar.getInstance();
         int year = toDay.get(Calendar.YEAR);
         int month = toDay.get(Calendar.MONTH) + 1;
@@ -101,21 +79,13 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
             editor.putInt("DAY", day);
             editor.apply();
         }
-        stepcount = 0;
     }
 
     @Override
-    protected void onStop() {
-        //歩数の類型をsharedPreferenceに保存
+    protected void onStop(){
         super.onStop();
-        SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-        int sharedCount = stepcount + gameData.getInt("AllStep", 0);
-        int toDayCount = stepcount + gameData.getInt("DayStep", 0);
-        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
-        editor.putInt("AllStep", sharedCount);
-        editor.putInt("DayStep", toDayCount);
-        editor.apply();
-        stepcount = 0;
+        Intent intent = new Intent(getApplication(), MonsterLabo.class);
+        stopService(intent);
     }
 
     private void moveGame() {

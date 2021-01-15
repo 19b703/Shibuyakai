@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(getApplication(), MonsterLabo.class);
+        startService(intent);
     }
 
     //タップされたときに画面遷移
@@ -27,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
         return super.dispatchTouchEvent(event);
     }
 
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Intent intent = new Intent(getApplication(), MonsterLabo.class);
+        stopService(intent);
+    }
 
 }

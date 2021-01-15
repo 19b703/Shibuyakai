@@ -19,7 +19,7 @@ public class ExpoFragment extends Fragment {
                   "歩いたエネルギーでモンスターは育つよ!\n" +
                   "育ち切ったモンスターは旅立っていくよ!\n" +
                   "モンスターは全部で3種類!\n"+
-                  "君はすべてのモンスターをそだてられるかな?!";
+                  "君はすべてのモンスターを育てられるかな?!";
 
 
     public static ExpoFragment newInstance() {
