@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void displayCharacter() {
         SharedPreferences gameData = GameActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-        int total = gameData.getInt("AllStep", 0);
+        int total = gameData.getInt("MonStep", 0);
         ImageView character = findViewById(R.id.characterView);
         int flg = gameData.getInt("flg", 0); //0:しぶや 1:ただ 2:かとう
 
@@ -47,7 +47,7 @@ public class GameActivity extends AppCompatActivity {
             flg = rnd.nextInt(3);
             SharedPreferences.Editor editor = gameData.edit();
             editor.putInt("flg", flg);
-            editor.putInt("AllStep",0);
+            editor.putInt("MonStep",0);
             editor.apply();
             createDialog();
         }

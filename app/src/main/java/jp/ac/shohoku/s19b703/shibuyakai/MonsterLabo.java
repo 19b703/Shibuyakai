@@ -41,6 +41,7 @@ public class MonsterLabo extends Service implements SensorEventListener {
         SharedPreferences gameData = MonsterLabo.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
         int AllStep = gameData.getInt("AllStep", 0);
         int DayStep = gameData.getInt("DayStep", 0);
+        int MonStep = gameData.getInt("MonStep", 0);
 
         if (first) {
             first = false;
@@ -53,6 +54,7 @@ public class MonsterLabo extends Service implements SensorEventListener {
                 up = false;
                 AllStep++;
                 DayStep++;
+                MonStep++;
             } else if (!up && d > d0) {
                 up = true;
                 d0 = d;
@@ -60,6 +62,8 @@ public class MonsterLabo extends Service implements SensorEventListener {
             @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
             editor.putInt("AllStep", AllStep);
             editor.putInt("DayStep", DayStep);
+            editor.putInt("MonStep", 0);
+
             editor.apply();
         }
     }

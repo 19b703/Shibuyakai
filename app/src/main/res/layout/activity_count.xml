@@ -7,12 +7,12 @@
     tools:context=".CountActivity">
 
     <!--    @author 19b703 渋谷彩香-->
+
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fffbe5">
-
     </FrameLayout>
 
     <TextView
@@ -76,6 +76,7 @@
         tools:ignore="InvalidId,MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="👣"
@@ -104,5 +105,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TotalReset"
+        android:textSize="30dp"
+        android:textColor="#FF9900"
+        android:textStyle="bold"
+        android:background="#fffbe5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
