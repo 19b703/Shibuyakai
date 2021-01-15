@@ -15,8 +15,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SpecialThanks : ITPG"
-        android:textSize="15dp"
+        android:text="Illust:Taya Layout:Ayas Code:Myu GeneralEditor:Utsumi SpecialThanks:ITPG"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />

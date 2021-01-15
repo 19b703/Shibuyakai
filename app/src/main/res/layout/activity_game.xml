@@ -11,18 +11,6 @@
 
     <!--    @author 19b703 渋谷彩香-->
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ゲームメイン画面"
-        android:textSize="51dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="InvalidId,MissingConstraints" />
-
     <Button
         android:id="@+id/expoButton"
         android:layout_width="100dp"

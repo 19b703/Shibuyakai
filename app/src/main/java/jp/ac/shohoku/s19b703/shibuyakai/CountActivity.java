@@ -3,7 +3,6 @@ package jp.ac.shohoku.s19b703.shibuyakai;
 //歩数計画面
 //MyuKato
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

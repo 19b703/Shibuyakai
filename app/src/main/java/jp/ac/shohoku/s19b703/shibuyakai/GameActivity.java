@@ -50,7 +50,6 @@ public class GameActivity extends AppCompatActivity {
             editor.putInt("AllStep",0);
             editor.apply();
             createDialog();
-            total = 200;
         }
 
         switch (flg) {
