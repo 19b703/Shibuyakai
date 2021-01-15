@@ -25,7 +25,7 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
     boolean first = true;
     boolean up = false;
     float d0, d = 0f;
-    int stepcount = 0;
+    int stepcount;
     float a = 0.6f;
 
     @Override
@@ -101,6 +101,7 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
             editor.putInt("DAY", day);
             editor.apply();
         }
+        stepcount = 0;
     }
 
     @Override

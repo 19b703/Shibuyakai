@@ -2,17 +2,14 @@ package jp.ac.shohoku.s19b703.shibuyakai;
 
 //ゲームメイン画面
 
-import android.app.Dialog;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,19 +19,11 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-
-        //CountActivity開始
-        //stepcountがどうなるかわからん
-        Intent intent = new Intent(this,CountActivity.class);
-        startActivity(intent);
-
-        //歩数
-        SharedPreferences gameData = GameActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-        int step = gameData.getInt("step", 0);
 
         moveExpo();
         moveCount();
@@ -44,7 +33,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void displayCharacter() {
         SharedPreferences gameData = GameActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-        int total = gameData.getInt("step", 0);
+        int total = gameData.getInt("AllStep", 0);
         ImageView character = findViewById(R.id.characterView);
         int flg = gameData.getInt("flg", 0); //0:しぶや 1:ただ 2:かとう
 
@@ -53,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
             flg = rnd.nextInt(3);
             SharedPreferences.Editor editor = gameData.edit();
             editor.putInt("flg", flg);
-            editor.remove("step");
+            editor.putInt("AllStep",0);
             editor.apply();
             createDialog();
             total = 200;
