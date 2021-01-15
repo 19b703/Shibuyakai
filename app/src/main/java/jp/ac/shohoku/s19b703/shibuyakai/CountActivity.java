@@ -3,6 +3,7 @@ package jp.ac.shohoku.s19b703.shibuyakai;
 //歩数計画面
 //MyuKato
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -51,6 +52,7 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         //精度が変更されたとき
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onStart() {
         super.onStart();

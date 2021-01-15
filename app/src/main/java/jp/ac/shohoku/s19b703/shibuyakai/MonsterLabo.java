@@ -10,7 +10,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.IBinder;
-import android.widget.TextView;
 
 public class MonsterLabo extends Service implements SensorEventListener {
 
@@ -36,7 +35,7 @@ public class MonsterLabo extends Service implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        float value[] = sensorEvent.values;
+        float[] value = sensorEvent.values;
 
         float sum = (float) Math.sqrt(Math.pow(value[0], 2) + Math.pow(value[1], 2) + Math.pow(value[2], 2));
         SharedPreferences gameData = MonsterLabo.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
