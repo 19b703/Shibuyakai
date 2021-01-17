@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:src="@drawable/m"
     tools:context=".CountActivity">
 
     <!--    @author 19b703 渋谷彩香-->
@@ -12,16 +13,37 @@
         android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fffbe5">
+        android:layout_marginBottom="4dp"
+        android:background="#ffeeFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="102dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="750dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/m" />
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="👣"
+        android:textSize="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="InvalidId,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:text="Total"
-        android:textSize="100dp"
+        android:textSize="120dp"
+        android:textColor="#333366"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/frameLayout2"
@@ -31,9 +53,10 @@
         android:id="@+id/AllStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="390dp"
         android:text="count1"
-        android:textSize="100dp"
+        android:textSize="150dp"
+        android:textColor="#333366"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/frameLayout2"
@@ -44,9 +67,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="750dp"
         android:text="Today"
-        android:textSize="100dp"
+        android:textSize="110dp"
+        android:textColor="#333366"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,9 +80,10 @@
         android:id="@+id/DayStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="700dp"
+        android:layout_marginTop="900dp"
         android:text="count2"
-        android:textSize="100dp"
+        android:textSize="140dp"
+        android:textColor="#333366"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,7 +92,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:text="🏃"
         android:textSize="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,13 +100,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="InvalidId,MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="👣"
-        android:textSize="100dp"
-        tools:ignore="InvalidId,MissingConstraints" />
+
 
     <Button
         android:id="@+id/gameButton"
@@ -112,9 +131,9 @@
         android:layout_height="wrap_content"
         android:text="TotalReset"
         android:textSize="30dp"
-        android:textColor="#FF9900"
+        android:textColor="#FF77FF"
         android:textStyle="bold"
-        android:background="#fffbe5"
+        android:background="#ffeeFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />

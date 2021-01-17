@@ -15,11 +15,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class ExpoFragment extends Fragment {
-    String expo = "モンスターの幼体を発見したよ!\n" +
-                  "歩いたエネルギーでモンスターは育つよ!\n" +
-                  "育ち切ったモンスターは旅立っていくよ!\n" +
+    String expo = "モンスターの幼体を発見したぞ!\n" +
+                  "歩いたエネルギーでモンスターは育つ。\n" +
+                  "育ち切ったモンスターは旅立っていくよ。\n" +
                   "モンスターは全部で3種類!\n"+
-                  "君はすべてのモンスターを育てられるかな?!";
+                  "君はすべてのモンスターを育てられるかな!?";
 
 
     public static ExpoFragment newInstance() {
