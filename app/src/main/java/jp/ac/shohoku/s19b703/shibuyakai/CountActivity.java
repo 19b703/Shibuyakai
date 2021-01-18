@@ -12,7 +12,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,8 +32,10 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
 
         moveGame();
+        resetTotal();
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         TextView CountAll = findViewById(R.id.AllStep);
@@ -91,13 +92,21 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
 
     private void moveGame() {
         Button game = findViewById(R.id.gameButton);
-        game.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CountActivity.this, GameActivity.class);
-                startActivity(intent);
-            }
+        game.setOnClickListener(v -> {
+            Intent intent = new Intent(CountActivity.this, GameActivity.class);
+            startActivity(intent);
         });
 
+    }
+
+    private void resetTotal() {
+        Button reset = findViewById(R.id.reset);
+        reset.setOnClickListener(v -> {
+            SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
+            editor.putInt("AllStep", 0);
+            TextView CountAll = findViewById(R.id.AllStep);
+            CountAll.setText("0歩");
+        });
     }
 }

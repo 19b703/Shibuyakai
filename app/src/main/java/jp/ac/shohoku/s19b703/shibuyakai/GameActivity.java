@@ -27,7 +27,7 @@ public class GameActivity extends AppCompatActivity {
 
         moveExpo();
         moveCount();
-        displayCharacter();
+        //displayCharacter();
     }
     @Override
     protected void onStart(){
@@ -35,7 +35,7 @@ public class GameActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplication(), MonsterLabo.class);
         startService(intent);
     }
-
+/*
     private void displayCharacter() {
         SharedPreferences gameData = GameActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
         int total = gameData.getInt("MonStep", 0);
@@ -51,6 +51,7 @@ public class GameActivity extends AppCompatActivity {
             editor.apply();
             createDialog();
         }
+
 
         switch (flg) {
             case 0:
@@ -80,36 +81,32 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+
+ */
     private void moveCount() {
         Button count = findViewById(R.id.countButton);
-        count.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GameActivity.this, CountActivity.class);
-                startActivity(intent);
-            }
+        count.setOnClickListener(v -> {
+            Intent intent = new Intent(GameActivity.this, CountActivity.class);
+            startActivity(intent);
         });
     }
 
     private void moveExpo() {
         final Button expo = findViewById(R.id.expoButton);
         final Button count = findViewById(R.id.countButton);
-        expo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        expo.setOnClickListener(v -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // BackStackを設定
-                fragmentTransaction.addToBackStack(null);
+            // BackStackを設定
+            fragmentTransaction.addToBackStack(null);
 
-                // パラメータを設定
-                fragmentTransaction.replace(R.id.expo, ExpoFragment.newInstance());
-                fragmentTransaction.commit();
+            // パラメータを設定
+            fragmentTransaction.replace(R.id.expo, ExpoFragment.newInstance());
+            fragmentTransaction.commit();
 
-                expo.setVisibility(View.INVISIBLE);
-                count.setVisibility(View.INVISIBLE);
-            }
+            expo.setVisibility(View.INVISIBLE);
+            count.setVisibility(View.INVISIBLE);
         });
     }
 
