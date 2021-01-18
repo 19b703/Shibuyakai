@@ -25,20 +25,15 @@
 
     <Button
         android:id="@+id/closeCredit"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@android:color/holo_red_light"
-        android:text="✕"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/layout"
+        android:text="✖"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008"
         tools:ignore="InvalidId,MissingConstraints" />
+
 
     <ImageView
         android:id="@+id/creditView"

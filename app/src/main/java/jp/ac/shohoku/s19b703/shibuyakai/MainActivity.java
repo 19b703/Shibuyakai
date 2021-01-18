@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         super.onStop();
         Intent intent = new Intent(getApplication(), MonsterLabo.class);
         stopService(intent);

@@ -41,6 +41,7 @@ public class MonsterLabo extends Service implements SensorEventListener {
         float[] value = sensorEvent.values;
 
         float sum = (float) Math.sqrt(Math.pow(value[0], 2) + Math.pow(value[1], 2) + Math.pow(value[2], 2));
+
         SharedPreferences gameData = MonsterLabo.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
         int AllStep = gameData.getInt("AllStep", 0);
         int DayStep = gameData.getInt("DayStep", 0);

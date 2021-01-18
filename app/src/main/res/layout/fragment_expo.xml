@@ -14,19 +14,18 @@
         android:background="#f0e5ff"
         tools:layout_editor_absoluteX="178dp"
         tools:layout_editor_absoluteY="16dp">
-
-        <Button
-            android:id="@+id/closeExpoButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layout"
-            android:text="✖"
-            android:textColor="#ffffff"
-            tools:ignore="InvalidId,MissingConstraints" />
-
-
-
     </FrameLayout>
+
+    <Button
+        android:id="@+id/closeExpoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout"
+        android:text="✖"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="InvalidId,MissingConstraints" />
+
 
     <ImageView
         android:id="@+id/imageView"
