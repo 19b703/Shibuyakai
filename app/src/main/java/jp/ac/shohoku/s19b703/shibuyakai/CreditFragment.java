@@ -1,5 +1,8 @@
 package jp.ac.shohoku.s19b703.shibuyakai;
 
+//クレジット画面
+//MyuKato
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

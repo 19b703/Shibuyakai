@@ -2,11 +2,12 @@ package jp.ac.shohoku.s19b703.shibuyakai;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//タイトル画面
+//MyuKato
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
-
-//タイトル画面
 
 public class MainActivity extends AppCompatActivity {
 

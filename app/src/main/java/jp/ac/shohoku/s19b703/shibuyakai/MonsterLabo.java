@@ -1,5 +1,8 @@
 package jp.ac.shohoku.s19b703.shibuyakai;
 
+//歩数カウント（バックグラウンド処理）
+//MyuKato
+
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;

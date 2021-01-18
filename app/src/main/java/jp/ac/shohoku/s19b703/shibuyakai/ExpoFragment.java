@@ -1,6 +1,7 @@
 package jp.ac.shohoku.s19b703.shibuyakai;
 
 //ゲーム説明画面
+//MyuKato
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
