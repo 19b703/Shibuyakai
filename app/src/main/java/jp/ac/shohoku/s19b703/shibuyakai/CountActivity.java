@@ -12,6 +12,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -71,9 +72,6 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
         int oldM = gameData.getInt("MONTH", 0);
         int oldD = gameData.getInt("DAY", 0);
 
-        TextView test = findViewById(R.id.test);
-        test.setText(oldY + "/" + oldM + "/" + oldD);
-
         if (!(year == oldY && month == oldM && day == oldD)) {
             editor.putInt("DayStep", 0);
             editor.putInt("YEAR", year);
@@ -81,6 +79,8 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
             editor.putInt("DAY", day);
             editor.apply();
         }
+        TextView test = findViewById(R.id.test);
+        test.setText(year + "/" + month + "/" + day);
     }
 
     @Override
@@ -92,21 +92,27 @@ public class CountActivity extends AppCompatActivity implements SensorEventListe
 
     private void moveGame() {
         Button game = findViewById(R.id.gameButton);
-        game.setOnClickListener(v -> {
-            Intent intent = new Intent(CountActivity.this, GameActivity.class);
-            startActivity(intent);
+        game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CountActivity.this, GameActivity.class);
+                CountActivity.this.startActivity(intent);
+            }
         });
 
     }
-
     private void resetTotal() {
         Button reset = findViewById(R.id.reset);
-        reset.setOnClickListener(v -> {
-            SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
-            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
-            editor.putInt("AllStep", 0);
-            TextView CountAll = findViewById(R.id.AllStep);
-            CountAll.setText("0歩");
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences gameData = CountActivity.this.getSharedPreferences("gameData", Context.MODE_PRIVATE);
+                @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
+                editor.putInt("AllStep", 0);
+                editor.apply();
+                TextView CountAll = CountActivity.this.findViewById(R.id.AllStep);
+                CountAll.setText("0歩");
+            }
         });
     }
 }
