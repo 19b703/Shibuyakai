@@ -31,7 +31,6 @@ public class GameActivity extends AppCompatActivity {
 
         moveExpo();
         moveCount();
-        displayCharacter();
     }
 
     @Override
@@ -39,6 +38,7 @@ public class GameActivity extends AppCompatActivity {
         super.onStart();
         Intent intent = new Intent(getApplication(), MonsterLabo.class);
         startService(intent);
+        displayCharacter();
     }
 
     private void displayCharacter() {

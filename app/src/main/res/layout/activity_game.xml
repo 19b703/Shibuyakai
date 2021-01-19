@@ -35,8 +35,8 @@
 
     <RelativeLayout
         android:id="@+id/game"
-        android:layout_width="362dp"
-        android:layout_height="557dp"
+        android:layout_width="588dp"
+        android:layout_height="625dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"

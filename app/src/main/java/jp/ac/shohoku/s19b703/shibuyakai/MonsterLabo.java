@@ -66,7 +66,7 @@ public class MonsterLabo extends Service implements SensorEventListener {
             @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = gameData.edit();
             editor.putInt("AllStep", AllStep);
             editor.putInt("DayStep", DayStep);
-            editor.putInt("MonStep", 0);
+            editor.putInt("MonStep", MonStep);
 
             editor.apply();
         }
