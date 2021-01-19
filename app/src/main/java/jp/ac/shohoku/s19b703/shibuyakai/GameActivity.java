@@ -7,10 +7,15 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +34,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        reStart();
         moveExpo();
         moveCount();
     }
@@ -38,6 +44,11 @@ public class GameActivity extends AppCompatActivity {
         super.onStart();
         Intent intent = new Intent(getApplication(), MonsterLabo.class);
         startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         displayCharacter();
     }
 
@@ -54,6 +65,7 @@ public class GameActivity extends AppCompatActivity {
             editor.putInt("flg", flg);
             editor.putInt("MonStep", 0);
             editor.apply();
+            total = 0;
             createDialog();
         }
         switch (flg) {
@@ -121,6 +133,17 @@ public class GameActivity extends AppCompatActivity {
         dialog.setMessage("成長したモンスターは旅立っていったよ\n新しいモンスターを育てよう!");
         dialog.setPositiveButton("そだてる", null);
         dialog.create().show();
+    }
+
+    private void reStart() {
+        Button restart = findViewById(R.id.restart);
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //createDialog();
+                displayCharacter();
+            }
+        });
     }
 
     @Override
