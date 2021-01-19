@@ -140,7 +140,6 @@ public class GameActivity extends AppCompatActivity {
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //createDialog();
                 displayCharacter();
             }
         });
