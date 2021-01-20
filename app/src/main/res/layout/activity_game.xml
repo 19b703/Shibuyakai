@@ -46,6 +46,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitEnd"
+        android:src="@drawable/haikei"
+        tools:ignore="MissingConstraints" />
+
     <RelativeLayout
         android:id="@+id/game"
         android:layout_width="588dp"
