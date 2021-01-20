@@ -55,8 +55,10 @@ public class ExpoFragment extends Fragment {
             public void onClick(View v) {
                 Button expo = (Button) getActivity().findViewById(R.id.expoButton);
                 Button count = (Button) getActivity().findViewById(R.id.countButton);
+                Button restart = (Button) getActivity().findViewById(R.id.restart);
                 expo.setVisibility(View.VISIBLE);
                 count.setVisibility(View.VISIBLE);
+                restart.setVisibility(View.VISIBLE);
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().remove(ExpoFragment.this).commit();
             }
