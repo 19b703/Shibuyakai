@@ -85,10 +85,10 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case 2:
                 if (total < 100) Glide.with(this).load(R.raw.k00).into(target);
-                else if (total < 200) Glide.with(this).load(R.raw.k00).into(target);
-                else if (total < 300) Glide.with(this).load(R.raw.k00).into(target);
-                else if (total < 400) Glide.with(this).load(R.raw.k00).into(target);
-                else Glide.with(this).load(R.raw.k00).into(target);
+                else if (total < 200) Glide.with(this).load(R.raw.k01).into(target);
+                else if (total < 300) Glide.with(this).load(R.raw.k02).into(target);
+                else if (total < 400) Glide.with(this).load(R.raw.k03).into(target);
+                else Glide.with(this).load(R.raw.k04).into(target);
                 break;
             default:
                 break;
@@ -109,6 +109,7 @@ public class GameActivity extends AppCompatActivity {
     private void moveExpo() {
         final Button expo = findViewById(R.id.expoButton);
         final Button count = findViewById(R.id.countButton);
+        final Button restart = findViewById(R.id.restart);
         expo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +125,7 @@ public class GameActivity extends AppCompatActivity {
 
                 expo.setVisibility(View.INVISIBLE);
                 count.setVisibility(View.INVISIBLE);
+                restart.setVisibility(View.INVISIBLE);
             }
         });
     }
